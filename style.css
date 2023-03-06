@@ -120,9 +120,18 @@ input{
     transition: border-bottom 500ms;
 }
 
+input:valid:focus {
+    border-bottom: solid var(--light);
+  }
+  
+
 input:focus{
     border-bottom: solid var(--lighter);
 }
+
+input:invalid{
+    border-color: red;
+  }
 
 .shadow{
     width: 100%;
@@ -144,7 +153,7 @@ input:focus{
     padding: 2rem;
 }
 
-button {
+button[type="submit"] {
     color: var(--lighter);
     width: 12rem;
     height: 5rem;
@@ -155,13 +164,22 @@ button {
     background-color: var(--middle);
     list-style: none;
     transition: width 1s,height 1s,border 100ms;
-
+    cursor: pointer;
 }
 
-button:hover{
+button[type="submit"]:hover{
     width: 13rem;
     height: 6rem;
     border: solid var(--lighter);
+}
+
+button[type="submit"]:active{
+    transition: width 0.25s,height 0.25s,border 50ms;
+    width: 15rem;
+    height: 8rem;
+    background-color: var(--lighter);
+    color: var(--darker);
+    border: solid var(--middle);
 }
 
 /* Link */
